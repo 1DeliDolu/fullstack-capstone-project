@@ -10,7 +10,24 @@ const { loadData } = require("./util/import-mongo/index");
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+];
+
+const corsOptions = {
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+        return callback(null, false);
+    },
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'email'],
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 const port = 3060;
 

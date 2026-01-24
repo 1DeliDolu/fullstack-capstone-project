@@ -19,6 +19,7 @@ function App() {
                 {/* the final code will not pass the products to every page, but each page will call the server API */}
                 <Route path="/" element={<MainPage />} />
                 <Route path="/app" element={<MainPage />} />
+                <Route path="/app/product" element={<MainPage />} />
                 <Route path="/app/product/:productId" element={<DetailsPage />} />
                 <Route path="/app/search" element={<SearchPage />} />
                 <Route path="/app/login" element={<LoginPage />} />

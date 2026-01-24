@@ -14,7 +14,8 @@ function DetailsPage() {
         const authenticationToken = sessionStorage.getItem('auth-token');
         if (!authenticationToken) {
             // Task 1: Check for authentication and redirect
-            navigate('app/login')
+            navigate('/app/login');
+            return;
         }
 
         // get the gift to be rendered on the details page
