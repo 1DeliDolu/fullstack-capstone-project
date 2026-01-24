@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: giftlink-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 9x6USkippwJFSCaOxc4IG2Zu
+      MONGO_INITDB_DATABASE: giftdb
+      # Helpful app-facing variables
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: 9x6USkippwJFSCaOxc4IG2Zu
+      MONGO_HOST: mongo
+      MONGO_PORT: 27017
+      # Set MONGO_URL to point to the mongo service for other containers
+      MONGO_URL: mongodb://root:9x6USkippwJFSCaOxc4IG2Zu@mongo:27017
+      # Original remote URL (kept for reference)
+      MONGO_URL_REMOTE: "mongodb://root:9x6USkippwJFSCaOxc4IG2Zu@172.21.14.207:27017"
+    volumes:
+      - ./mongo-data:/data/db
+    networks:
+      - giftlink-network
+
+networks:
+  giftlink-network:
+    driver: bridge
