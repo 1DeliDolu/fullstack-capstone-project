@@ -13,6 +13,18 @@ export default function Navbar() {
                     <li className="nav-item">
                         <a className="nav-link" href="/app">Gifts</a> {/* Updated Link */}
                     </li>
+                    {/* search */}
+                    <li className="nav-item">
+                        <a className="nav-link" href="/search">Search</a> {/* Link to search page */}
+                    </li>
+                    {/* LOGIN */}
+                    <li className="nav-item">
+                        <a className="nav-link" href="/login">Login</a> {/* Link to login page */}
+                    </li>
+                    {/* SIGNUP */}
+                    <li className="nav-item">
+                        <a className="nav-link" href="/register">Register</a> {/* Link to signup page */}
+                    </li>
                 </ul>
             </div>
         </nav>
