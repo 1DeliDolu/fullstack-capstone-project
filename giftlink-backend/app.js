@@ -2,6 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+
 const pinoLogger = require('./logger');
 const authRoutes = require('./routes/authRoutes');
 
@@ -13,6 +14,7 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
+    'https://mustafaozdem-9001.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
 ];
 
 const corsOptions = {
